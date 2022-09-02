@@ -1,0 +1,5 @@
+/.venv
+.env
+*.jp2
+*.tif
+*.tif.aux.xml
