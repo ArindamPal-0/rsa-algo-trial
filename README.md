@@ -3,13 +3,15 @@
 
 <br>
 
-### Setup
+## Setup
+
+### Dev Setup
 
 creating virtual environment and installing dependencies.
 
 ```powershell
 $ mkdir .venv
-$ pipenv install
+$ pipenv install --dev
 ```
 
 create `.env` file with `API_KEY` variable.
@@ -28,7 +30,23 @@ $ pipenv shell
 $ python main.py
 ```
 
-(OR)
+### Normal Setup
+
+creating virtual environment and installing dependencies.
+
+```powershell
+$ mkdir .venv
+$ pipenv install
+```
+
+create `.env` file with `API_KEY` variable.
+
+file:.env
+```text
+API_KEY=<your spectator api key>
+```
+
+run the program by running the following command:
 
 ```powershell
 $ pipenv run python main.py
