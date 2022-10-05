@@ -85,7 +85,10 @@ def check_images_with_coordinates(url: str, api_key: str, coordinates: list[tupl
 def select_image(results: list, index: int) -> dict:
     return results[index]
 
-def download_band_image(selected_result: dict, band_index: int, api_key: str) -> None:
+def download_band_image(selected_result: dict, band_index: int, api_key: str) -> str:
+    """
+        downloads the band image and returns the filename.
+    """
     # get download url
     download_url: str = selected_result['download_url']
     print(download_url)
@@ -122,3 +125,5 @@ def download_band_image(selected_result: dict, band_index: int, api_key: str) ->
     # save the image to file appropriately named
     with open(band_image['name'], 'wb') as file:
         file.write(band_image_data)
+
+    return band_image['name']
