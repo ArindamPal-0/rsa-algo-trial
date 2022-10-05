@@ -9,6 +9,7 @@ shapely = "*"
 rasterio = "*"
 matplotlib = "*"
 numpy = "*"
+imageio = "*"
 
 [dev-packages]
 ipykernel = "*"

@@ -1,6 +1,7 @@
 /.venv
 .env
 *.jp2
+*.png
 *.tif
 *.tif.aux.xml
 __pycache__

@@ -1,5 +1,5 @@
 import sys, os
-from algorithm import download_images, clip_images
+from algorithm import download_images, clip_images, calculate_vi
 
 def main() -> int:
     """Main function"""
@@ -25,9 +25,9 @@ def main() -> int:
     # print(image_present)
 
     if image_present:
-        results: list = download_images.get_image_results_with_coordinates(url, API_KEY, coordinates)
+        # results: list = download_images.get_image_results_with_coordinates(url, API_KEY, coordinates)
 
-        selected_result: dict = download_images.select_image(results, 0)
+        # selected_result: dict = download_images.select_image(results, 0)
 
         # downloading 4th band
         band4_name: str = 'B04.jp2'
@@ -55,6 +55,10 @@ def main() -> int:
         # band8_clipped: str = clip_images.clip_image(band8_converted, coordinates)
 
         print("BOTH IMAGE CLIPPED")
+
+        calculate_vi.calculate_ndvi(band4_clipped, band8_clipped)
+
+        print("CALCULATED NDVI")
 
     return 0
 
